@@ -1,0 +1,18 @@
+group 'io.mulberry'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile 'org.apache.hadoop:hadoop-common:2.7.1'
+    compile 'org.apache.tajo:tajo-common:0.11.0'
+
+}
