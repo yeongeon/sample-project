@@ -1,11 +1,13 @@
-package io.mulberry.sample.interview;
+package io.mulberry.sample.quiz;
 
 /**
  * Created by yeongeon on 4/22/16.
  */
 public class ReversedOrderString {
-
   final String TXT = "  I am   a     software  engineer  ";
+  /*
+  [][]I[]ma[][][]a[][][][][]erawtfos[][]reenigne[]
+   */
 
   public void run(){
     StringBuffer fullBuffer = new StringBuffer();

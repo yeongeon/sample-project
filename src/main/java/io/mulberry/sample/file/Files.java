@@ -6,6 +6,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.permission.AclStatus;
 import org.apache.hadoop.fs.permission.FsAction;
 import org.apache.hadoop.fs.permission.FsPermission;
+import org.apache.hadoop.security.AccessControlException;
 import org.apache.tajo.conf.TajoConf;
 
 import java.io.IOException;
@@ -21,13 +22,9 @@ public class Files {
         this.conf = new TajoConf(tajoConf);
     }
 
-    public boolean getPermit(String src) throws IOException {
+    public void getPermit(String src) throws IOException {
         Path path = new Path(src);
         FileSystem fs = path.getFileSystem(conf);
-        FileStatus status = fs.getFileStatus(path);
-        FsPermission fsPermission = status.getPermission();
-        FsAction fsAction = fsPermission.getUserAction();
-        boolean permit = fsAction.implies(FsAction.READ_WRITE);
-        return permit;
+        fs.access(path, FsAction.READ_WRITE);
     }
 }

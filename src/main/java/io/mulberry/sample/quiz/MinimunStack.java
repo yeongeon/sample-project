@@ -1,4 +1,4 @@
-package io.mulberry.sample.interview;
+package io.mulberry.sample.quiz;
 
 import java.util.*;
 
@@ -18,8 +18,7 @@ public class MinimunStack {
                   5
                  /
                 3(min)
-   */
-  /*
+
   "10 6 7 5 3 4 2 1 9 8 14"
                       10
                      /  \
@@ -33,8 +32,6 @@ public class MinimunStack {
              /
             1(min)
 
-   */
-  /*
   "4 5 6 10 7 3 2 17 15 16 1"
                       4
                      /  \
@@ -44,6 +41,7 @@ public class MinimunStack {
                  /
                 1(min)
    */
+
   public class MinTree {
     private Node root;
     private Node minNode;
@@ -114,13 +112,10 @@ public class MinimunStack {
     }
   }
 
-
   private List<Integer> stack = new LinkedList<Integer>();
   private int ptr = -1;
 
   private MinTree minTree = new MinTree();
-  private Integer min = null;
-
 
   public void push(int v) throws CloneNotSupportedException {
     this.stack.add(v);
